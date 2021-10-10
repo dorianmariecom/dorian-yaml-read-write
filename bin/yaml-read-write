@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'dorian/yaml/read-write'
+Dorian::Yaml::ReadWrite.run
