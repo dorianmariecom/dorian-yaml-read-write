@@ -1,11 +1,11 @@
-require 'yaml'
+require "yaml"
 
 module Dorian
   module Yaml
     class ReadWrite
       def self.run
         if ARGV.size < 1
-          puts 'USAGE: yaml-read-write FILE [FILE...]'
+          puts "USAGE: yaml-read-write FILE [FILE...]"
           exit
         end
 
