@@ -1,5 +1,13 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "dorian/yaml/read-write"
-Dorian::Yaml::ReadWrite.run
+require "yaml"
+
+if ARGV.empty?
+  puts "USAGE: yaml-read-write FILE [FILE...]"
+  exit
+end
+
+ARGV.each do |filename|
+  File.write(filename, YAML.safe_load_file(filename).to_yaml)
+end
