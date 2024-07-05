@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dorian-yaml-read-write (0.2.6)
+    dorian-yaml-read-write (0.3.0)
 
 GEM
   remote: https://rubygems.org/
