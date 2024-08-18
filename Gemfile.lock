@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dorian-yaml-read-write (0.3.1)
+    dorian-yaml-read-write (0.3.2)
       yaml
 
 GEM
