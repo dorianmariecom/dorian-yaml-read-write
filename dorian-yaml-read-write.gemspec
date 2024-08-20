@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "dorian-yaml-read-write"
-  s.version = "0.3.2"
+  s.version = File.read("VERSION").strip
   s.summary = "reads and writes yaml"
   s.description = s.summary
   s.authors = ["Dorian Marié"]
