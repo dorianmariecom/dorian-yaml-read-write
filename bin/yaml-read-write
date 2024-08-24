@@ -1,13 +1,32 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require "dorian/arguments"
 require "yaml"
 
-if ARGV.empty?
-  puts "USAGE: yaml-read-write FILE [FILE...]"
-  exit
+parsed =
+  Dorian::Arguments.parse(
+    version: {
+      alias: :v
+    },
+    help: {
+      alias: :h
+    }
+  )
+
+abort parsed.help if parsed.options.help
+
+if parsed.options.version
+  abort File.read(File.expand_path("../../VERSION", __FILE__))
 end
 
-ARGV.each do |filename|
-  File.write(filename, YAML.safe_load_file(filename).to_yaml)
+parsed.files.each do |file|
+  File.write(file, YAML.safe_load(File.read(file)).to_yaml)
+end
+
+if parsed.files.empty?
+  input = parsed.arguments.join("\n")
+  input = $stdin.each_line.to_a.join if input.empty?
+
+  puts YAML.safe_load(input).to_yaml
 end
