@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dorian-yaml-read-write (1.1.2)
+    dorian-yaml-read-write (1.1.3)
       dorian-arguments
       yaml
 
